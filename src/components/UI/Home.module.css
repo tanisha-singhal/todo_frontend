@@ -1,0 +1,24 @@
+.heading {
+  color: rgb(29, 29, 175);
+  text-align: center;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgb(29, 29, 175);
+  border: 1px solid rgb(29, 29, 175);
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+.link{
+    text-decoration: none;
+    color:white;
+    font: inherit;
+    font-size: larger;
+}
