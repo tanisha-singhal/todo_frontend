@@ -9,19 +9,21 @@ const Register=()=>{
     const [email,setEmail]=useState("");
 
     const registerHandler=async ()=>{
-        try {
-            const data = await axios.post(`${process.env.REACT_APP_API_LINK}/api/users/create`, {
+        
+            await axios.post(`${process.env.REACT_APP_API_LINK}/api/users/create`, {
                 name: name,
                 email: email,
                 password: password,
                 
-            });
-            console.log(data);
-            history.push("/login");
-        }
-        catch (err) {
-            console.log(err);
-        }
+            }).then(function(response){
+                console.log(response);
+                history.push("/login");
+            }).catch(function(error){
+                console.log(error);
+            })
+            
+            
+        
     }
     return <section className={classes.register}>
         {/* <h1>REGISTER</h1> */}
