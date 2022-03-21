@@ -59,3 +59,8 @@
   border-color:rgba(25, 25, 124, 0.74);
 }
 
+.otherOption{
+  display:flex;
+  flex-direction: column;
+  margin-top: 5px;
+}

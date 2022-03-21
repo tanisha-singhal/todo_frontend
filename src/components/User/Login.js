@@ -74,20 +74,18 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button
-          className={classes.actions}
-          type="submit"
-          onClick={loginHandler}
-        >
-          Login
-        </button>
-        <div className="otherOption">
-          <button className=" otherbtns">
+        <div className={classes.actions}>
+          <button type="submit" onClick={loginHandler}>
+            Login
+          </button>
+        </div>
+        <div className={classes.otherOption}>
+          
             <p>Don't have an account? </p>
-            <Link to="/register" className="otherbtns">
+            <Link to="/register" className={classes.otherbtns}>
               Register
             </Link>
-          </button>
+          
         </div>
       </div>
     </section>

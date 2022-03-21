@@ -25,25 +25,7 @@ const Register = () => {
   };
   return (
     <section className={classes.register}>
-      {/* <h1>REGISTER</h1> */}
-      {/* <form>
-            <div className={classes.control}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" required onChange={(e)=>{setName(e.target.value)}}/>
-            </div>
-            <div className={classes.control}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required onChange={(e)=>{setEmail(e.target.value)}}/>
-            </div>
-            <div className={classes.control}>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required onChange={(e)=>{setPassword(e.target.value)}}/>
-            </div>
-            <div className={classes.actions}>
-            <button type="submit" onClick={registerHandler}>REGISTER</button>
-            </div>
-        </form> */}
-
+      
       <h1>REGISTER</h1>
 
       <div className="registerBox">

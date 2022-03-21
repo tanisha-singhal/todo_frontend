@@ -1,8 +1,27 @@
 import React, { useState } from "react";
 import classes from "./TodoForm.module.css";
+// import axios from "axios";
 const TodoForm = (props) => {
   const [input, setInput] = useState("");
-
+  // useEffect(()=>{
+  //     async function getUser(){
+  //       try {
+  //         await axios.post(
+  //          `${process.env.REACT_APP_API_LINK}/api/users/getuser`,
+  //          {
+  //            headers: {
+  //              "auth-token": localStorage.getItem("auth-token"),
+  //            },
+  //          }
+  //        );
+         
+  //      } catch (error) {
+  //        console.log(error);
+  //      }
+  //    }
+  //    getUser();
+      
+  // },[])
   const submitHandler = (e) => {
     e.preventDefault();
     const enteredTodo = {

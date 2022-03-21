@@ -1,5 +1,9 @@
 import { NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
+
+const logoutHandler=()=>{
+  localStorage.removeItem("auth-token");
+}
 const Navbar = () => {
   return (
     <header className={classes.header}>
@@ -21,7 +25,7 @@ const Navbar = () => {
 
                 </li> */}
           <li>
-            <NavLink to="/logout" className={classes.listItem}>
+            <NavLink to="/logout" onClick={logoutHandler} className={classes.listItem}>
               Logout
             </NavLink>
           </li>

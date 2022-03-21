@@ -34,7 +34,7 @@ function App() {
   //   }
   // ]
 
-  const [todos, setTodos] = useState([{}]);
+  const [todos, setTodos] = useState([]);
   const { login } = useContext(AuthContext);
   useEffect(() => {
     if (login) {
@@ -77,9 +77,9 @@ function App() {
 
   const checkHandler = async (_id) => {
     console.log(_id);
-    let x = todos.find((todo) => todo._id === _id);
-    x.checked = !x.checked;
-    let newTodos = todos.map((todo) => {
+   let x = {...todos.find((todo) => todo._id === _id)};
+    // x.checked = !x.checked;
+    let newTodos = [...todos].map((todo) => {
       if (todo._id === _id) {
         return {
           ...todo,
@@ -94,16 +94,14 @@ function App() {
 
     axios
       .put(
-        `${process.env.REACT_APP_API_LINK}/api/todo/updatetodo/${_id}`,
-        { updatedTodo: x },
-        {
+        `${process.env.REACT_APP_API_LINK}/api/todo/updatetodo/${_id}`,{todoToBeUpdated:x},{
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
           },
         }
       )
       .then((response) => {
-        console.log(response.data.element);
+        console.log(response.data.todo);
         setTodos(newTodos);
       })
       .catch((err) => {
@@ -136,8 +134,7 @@ function App() {
     <React.Fragment>
       <Navbar />
       <Switch>
-        {login && (
-          <Route path="/todo">
+        {login && (<Route path="/todo">
             <TodoForm onAddTodo={addTodoHandler} todos={todos} />
 
             <TodoList
@@ -145,8 +142,9 @@ function App() {
               onCheck={checkHandler}
               onDelete={deleteHandler}
             />
-          </Route>
-        )}
+          </Route>)}
+          
+        
         {!login && (
           <Route path="/" exact>
             <Home />
